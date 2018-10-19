@@ -99,5 +99,31 @@ namespace Quitar_Blancos
             return rpta2;
         }
 
+        private void btnOrigen_Click(object sender, EventArgs e)
+        {
+            using (FolderBrowserDialog fbd = new FolderBrowserDialog())
+            {
+                fbd.RootFolder = Environment.SpecialFolder.MyComputer;
+                if (fbd.ShowDialog() == DialogResult.OK)
+                {
+                    txtOrigen.Text = fbd.SelectedPath;
+                }
+
+            }
+            
+        }
+
+        private void btnDestino_Click(object sender, EventArgs e)
+        {
+            using (FolderBrowserDialog fbd = new FolderBrowserDialog())
+            {
+                fbd.RootFolder = Environment.SpecialFolder.MyComputer;
+                if (fbd.ShowDialog() == DialogResult.OK)
+                {
+                    txtDestino.Text = fbd.SelectedPath;
+                }
+
+            }
+        }
     }
 }
